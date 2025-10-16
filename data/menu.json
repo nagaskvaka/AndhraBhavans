@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "item-1",
+      "title": "Hyderabadi Biryani",
+      "desc": "Fragrant basmati rice layered with spiced meat and slow-cooked for rich flavor.",
+      "img": "images/G1.jpg",
+      "cat": ["rice"],
+      "price": 6.50
+    },
+    {
+      "id": "item-2",
+      "title": "Gongura Mutton",
+      "desc": "Tangy gongura leaves cooked with tender mutton — Andhra specialty.",
+      "img": "images/G2.jpg",
+      "cat": ["starters","rice"],
+      "price": 7.00
+    },
+    {
+      "id": "item-3",
+      "title": "Pesarattu",
+      "desc": "Green gram crepe served hot with ginger chutney.",
+      "img": "images/G3.jpg",
+      "cat": ["tiffin"],
+      "price": 3.50
+    },
+    {
+      "id": "item-4",
+      "title": "Masala Dosa",
+      "desc": "Crispy rice dosa stuffed with spiced potato filling.",
+      "img": "images/G4.jpg",
+      "cat": ["tiffin"],
+      "price": 4.00
+    },
+    {
+      "id": "item-5",
+      "title": "Mango Lassi",
+      "desc": "Creamy mango lassi to refresh and cool.",
+      "img": "images/G2.jpg",
+      "cat": ["drinks"],
+      "price": 2.25
+    }
+  ]
+}

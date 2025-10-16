@@ -1,0 +1,64 @@
+[
+  {
+    "cart": {
+      "items": {
+        "item-1": {
+          "id": "item-1",
+          "title": "Hyderabadi Biryani",
+          "price": 6.5,
+          "qty": 2
+        }
+      },
+      "count": 2
+    },
+    "customer": {
+      "name": "orger",
+      "phone": "345343456346",
+      "address": "sdfgdslfgk"
+    },
+    "meta": {
+      "placedAt": "2025-10-15T17:33:12.539Z"
+    },
+    "id": "order-1760549592562",
+    "created": "2025-10-15T17:33:12.562Z"
+  },
+  {
+    "cart": {
+      "items": {},
+      "count": 0
+    },
+    "customer": {
+      "name": "orger",
+      "phone": "345343456346",
+      "address": "sdfgdslfgk"
+    },
+    "meta": {
+      "placedAt": "2025-10-15T17:33:16.985Z"
+    },
+    "id": "order-1760549596988",
+    "created": "2025-10-15T17:33:16.988Z"
+  },
+  {
+    "cart": {
+      "items": {
+        "item-3": {
+          "id": "item-3",
+          "title": "Pesarattu",
+          "price": 3.5,
+          "qty": 3
+        }
+      },
+      "count": 3
+    },
+    "customer": {
+      "name": "customer3",
+      "phone": "345646656",
+      "address": "hyderabad"
+    },
+    "meta": {
+      "placedAt": "2025-10-15T17:36:44.826Z"
+    },
+    "id": "order-1760549804828",
+    "created": "2025-10-15T17:36:44.828Z"
+  }
+]

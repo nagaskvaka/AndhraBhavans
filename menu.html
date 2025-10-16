@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>ANDHRA BHAVANS - INDKU FOODS</title>  
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header animate-fade">
+        <div class="container">
+            <h1 class="animate-pop">ANDHRA BHAVANS</h1>
+            <p class="tagline">Authentic Andhra Cuisine</p>
+            <p class="sub">INDIA KUWAIT RESTAURANT (INDKU FOODS)</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="site-nav animate-slide-left">
+        <div class="container nav-inner">
+            <a href="Main.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="contactus.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    
+
+    <main class="container">
+        <div class="menu-filter">
+            <button class="active" data-cat="all">All</button>
+            <button data-cat="starters">Starters</button>
+            <button data-cat="tiffin">Tiffins</button>
+            <button data-cat="rice">Rice</button>
+            <button data-cat="drinks">Drinks</button>
+        </div>
+
+        <section class="menu-grid staggered">
+            <div class="card" data-cat="rice">
+                <div class="card-media"><img data-src="images/G1.jpg" src="" alt="Dish 1" loading="lazy" width="800" height="500"><button class="quick-btn" aria-label="Quick view">Quick View</button></div>
+                <div class="card-content">
+                    <h3>Hyderabadi Biryani</h3>
+                    <p>A flavorful and aromatic rice dish cooked with the finest spices.</p>
+                    <div class="card-meta"><div class="price">KD 6.50</div><button class="add-cart" data-id="item-1">Add to cart</button></div>
+                </div>
+            </div>
+            <div class="card" data-cat="starters rice">
+                <div class="card-media"><img data-src="images/G1.jpg" src="" alt="Dish 2" loading="lazy" width="800" height="500"><button class="quick-btn" aria-label="Quick view">Quick View</button></div>
+                <div class="card-content">
+                    <h3>Gongura Mutton</h3>
+                    <p>A traditional tangy chutney made from fresh Gongura leaves.</p>
+                    <div class="card-meta"><div class="price">KD 7.00</div><button class="add-cart" data-id="item-2">Add to cart</button></div>
+                </div>
+            </div>
+            <div class="card" data-cat="tiffin">
+                <div class="card-media"><img data-src="images/G1.jpg" src="" alt="Dish 3" loading="lazy" width="800" height="500"><button class="quick-btn" aria-label="Quick view">Quick View</button></div>
+                <div class="card-content">
+                    <h3>Pesarattu</h3>
+                    <p>Healthy and crispy green gram pancake served with chutney.</p>
+                    <div class="card-meta"><div class="price">KD 3.50</div><button class="add-cart" data-id="item-3">Add to cart</button></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-grid">
+            <div class="card" data-cat="rice">
+                <div class="card-media"><img data-src="images/G4.jpg" src="" alt="Dish 2" loading="lazy" width="800" height="500"><button class="quick-btn" aria-label="Quick view">Quick View</button></div>
+                <div class="card-content">
+                    <h3>Rice & Bread Items</h3>
+                    <p>A traditional tangy chutney made from fresh Gongura leaves.</p>
+                </div>
+            </div>
+            <div class="card" data-cat="drinks">
+                <div class="card-media"><img data-src="images/G2.jpg" src="" alt="Dish 3" loading="lazy" width="800" height="500"><button class="quick-btn" aria-label="Quick view">Quick View</button></div>
+                <div class="card-content">
+                    <h3>Curries & Soft Drinks</h3>
+                    <p>Healthy and crispy green gram pancake served with chutney.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/site.js"></script>
+
+   
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Andhra Bhavans | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
