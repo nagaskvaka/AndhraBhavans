@@ -1,0 +1,25 @@
+[
+  {
+    "cart": {
+      "items": {
+        "item-1": {
+          "id": "item-1",
+          "title": "Hyderabadi Biryani",
+          "price": 6.5,
+          "qty": 2
+        }
+      },
+      "count": 2
+    },
+    "customer": {
+      "name": "orger",
+      "phone": "345343456346",
+      "address": "sdfgdslfgk"
+    },
+    "meta": {
+      "placedAt": "2025-10-15T17:33:12.539Z"
+    },
+    "id": "order-1760549592562",
+    "created": "2025-10-15T17:33:12.562Z"
+  }
+]

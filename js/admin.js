@@ -1,3 +1,24 @@
+const API = '/api';
+function fmtCurrency(n){ return '₹' + Number(n).toFixed(2); }
+function renderOrders(list){
+  const el = document.getElementById('orders-list');
+  if(!el) return;
+  if(!list || list.length===0) { el.innerHTML = '<p>No orders</p>'; return; }
+  el.innerHTML = list.map(o=>`<div class="order-card"><h4>${o.id}</h4><p>Customer: ${o.customer?.name||'-'}</p><p>Items: ${o.cart?.count||0}</p><button data-id="${o.id}" class="btn view">View</button></div>`).join('');
+  el.addEventListener('click', async e=>{
+    if(e.target.matches('.btn.view')){
+      const id = e.target.dataset.id; const res = await fetch(API + '/orders/' + id); if(!res.ok){ alert('Not found'); return; } const j = await res.json(); showDetail(j.order);
+    }
+  });
+}
+function showDetail(order){
+  const detail = document.getElementById('detail-content');
+  const list = Object.values(order.cart.items||{}).map(i=>`<li>${i.title} x ${i.qty} = ${fmtCurrency(i.price*i.qty)}</li>`).join('');
+  detail.innerHTML = `<h3>Order ${order.id}</h3><p>${order.customer?.name} — ${order.customer?.phone}</p><p>${order.customer?.address}</p><ul>${list}</ul><p>Placed: ${order.meta?.placedAt||order.created}</p>`;
+  document.getElementById('order-detail').hidden = false; document.getElementById('orders-list').hidden = true;
+}
+async function loadOrders(){ const res = await fetch(API + '/orders'); const j = await res.json(); renderOrders(j.orders || []); }
+document.addEventListener('DOMContentLoaded', ()=>{ loadOrders(); const back = document.getElementById('back-to-list'); if(back) back.addEventListener('click', ()=>{ document.getElementById('order-detail').hidden = true; document.getElementById('orders-list').hidden = false; }); });
 async function api(path, opts){
   const res = await fetch(path, Object.assign({headers:{'Content-Type':'application/json'}}, opts||{}));
   if(!res.ok) throw new Error('Network error');

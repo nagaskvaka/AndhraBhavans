@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Menu — Andhra Bhavans</title>
+  <title>Feedback — Andhra Bhavans</title>
   <link rel="stylesheet" href="styles.css">
-    <script defer src="js/site.js"></script>
-    <script src="js/cart.js" defer></script>
-    <script src="js/include-nav.js" defer></script>
+   <script defer src="js/site.js"></script>
+   <script src="js/include-nav.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
+  <header class="site-header">
     <div class="container">
       <h1 class="brand">Andhra Bhavans</h1>
       <nav class="nav">
@@ -22,13 +21,15 @@
         <a href="admin.html">Admin</a>
       </nav>
     </div>
-    </header>
-    <!-- shared header/nav 
-    <div data-include="nav"></div>-->
+  </header>
   <main class="container">
-    <section id="menu-list" class="menu-grid">
-      <!-- items loaded by js -->
-    </section>
+    <form id="feedback-form">
+      <label>Your name <input name="name"></label>
+      <label>Rating <select name="rating"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></label>
+      <label>Comments <textarea name="comments" required></textarea></label>
+      <button class="btn" type="submit">Send Feedback</button>
+    </form>
+    <div id="feedback-result" aria-live="polite"></div>
   </main>
   <footer class="site-footer">
     <div class="container">© Andhra Bhavans</div>

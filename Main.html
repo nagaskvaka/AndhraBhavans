@@ -11,29 +11,8 @@
 </head>
 
 <body>
-    <!-- Header -->
-  <header class="site-header animate-fade">
-    <div class="container">
-      <h1 class="animate-pop">ANDHRA BHAVANS</h1>
-      <p class="tagline">Authentic Andhra Cuisine</p>
-      <p class="sub">INDIA KUWAIT RESTAURANT (INDKU FOODS)</p>
-    </div>
-  </header>
-
-    <!-- Navigation -->
-  <nav class="site-nav animate-slide-left">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <div class="nav-toggle" aria-label="Open menu">
-        <span class="bar"></span>
-      </div>
-      <div class="nav-inner">
-        <a href="Main.html" class="active">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact</a>
-      </div>
-    </div>
-  </nav>
+    <!-- shared header/nav -->
+  <div data-include="nav"></div>
 
     <!-- Main Content -->
 
@@ -55,21 +34,21 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/G2.jpg" class="d-block w-100" alt="...">
+                <img src="images/HBR1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption animate-pop">
                   <h3>Flavorful Biryani</h3>
                   <p>Slow-cooked and perfectly spiced.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/G3.jpg" class="d-block w-100" alt="...">
+                <img src="images/GMR1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption animate-pop">
                   <h3>Fresh & Tasty Tiffins</h3>
                   <p>Breakfast favorites that start the day right.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="images/G4.jpg" class="d-block w-100" alt="...">
+                <img src="images/MLR1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption animate-pop">
                   <h3>Drinks & Desserts</h3>
                   <p>Cool off with our refreshing drinks.</p>
@@ -84,7 +63,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-        </div>
+        </div>  
     </section>
   <!-- Footer -->
     <footer>
@@ -93,5 +72,6 @@
 </body>
 
   <script src="js/site.js"></script>
+  <script src="js/include-nav.js" defer></script>
 </body>
 </html>

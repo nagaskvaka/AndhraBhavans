@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Orders — Admin</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/include-nav.js" defer></script>
+  <script defer src="js/admin.js"></script>
+</head>
+<body>
+  <!-- shared header/nav 
+  <div data-include="nav"></div>-->
+  <main class="container admin-page">
+    <section>
+      <h2>Orders</h2>
+      <div id="orders-list">Loading...</div>
+    </section>
+    <section id="order-detail" class="order-detail" hidden>
+      <button id="back-to-list" class="btn">Back</button>
+      <div id="detail-content"></div>
+    </section>
+  </main>
+</body>
+</html>

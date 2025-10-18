@@ -10,22 +10,21 @@
 </head>
 
 <body>
-    <header class="site-header animate-fade">
-        <div class="container">
-            <h1 class="animate-pop">ANDHRA BHAVANS</h1>
-            <p class="tagline">Authentic Andhra Cuisine</p>
-            <p class="sub">INDIA KUWAIT RESTAURANT (INDKU FOODS)</p>
-        </div>
+    <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Andhra Bhavans</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="contactus.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </div>
     </header>
-
-    <nav class="site-nav animate-slide-left">
-        <div class="container nav-inner">
-            <a href="Main.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="aboutus.html" class="active">About Us</a>
-            <a href="contactus.html">Contact</a>
-        </div>
-    </nav>
+    <!-- shared header/nav 
+    <div data-include="nav"></div>-->
 
     <!-- Main Content -->
     <section class="main-content-page">
@@ -45,6 +44,7 @@
     </footer>
 
     <script src="js/site.js"></script>
+    <script src="js/include-nav.js" defer></script>
 </body>
 
 </html>

@@ -13,6 +13,7 @@ app.use(express.static(path.join(__dirname)));
 
 const ORDERS_FILE = path.join(__dirname, 'data', 'orders.json');
 const MENU_FILE = path.join(__dirname, 'data', 'menu.json');
+const FEEDBACK_FILE = path.join(__dirname, 'data', 'feedback.json');
 
 function readOrders(){
   try{ return JSON.parse(fs.readFileSync(ORDERS_FILE, 'utf8')||'[]'); }catch(e){ return []; }
@@ -22,6 +23,8 @@ function readMenu(){
   try{ return JSON.parse(fs.readFileSync(MENU_FILE, 'utf8')||'{}'); }catch(e){ return { items: [] }; }
 }
 function writeMenu(obj){ fs.writeFileSync(MENU_FILE, JSON.stringify(obj, null, 2), 'utf8'); }
+function readFeedback(){ try{ return JSON.parse(fs.readFileSync(FEEDBACK_FILE, 'utf8')||'[]'); }catch(e){ return []; } }
+function writeFeedback(arr){ fs.writeFileSync(FEEDBACK_FILE, JSON.stringify(arr, null, 2), 'utf8'); }
 
 app.get('/api/orders', (req, res) => {
   const orders = readOrders();
@@ -45,6 +48,20 @@ app.post('/api/orders', (req, res) => {
   orders.push(payload);
   writeOrders(orders);
   res.json({ ok: true, id: payload.id });
+});
+
+// feedback endpoints
+app.post('/api/feedback', (req, res) => {
+  const body = req.body || {};
+  const arr = readFeedback();
+  const fb = { id: 'fb-' + Date.now(), name: body.name || '', rating: body.rating || 0, comments: body.comments || '', created: new Date().toISOString() };
+  arr.push(fb);
+  writeFeedback(arr);
+  res.json({ ok: true });
+});
+
+app.get('/api/feedback', (req, res) => {
+  res.json({ feedback: readFeedback() });
 });
 
 // Menu endpoints for admin UI

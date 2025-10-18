@@ -1,3 +1,31 @@
+/* Simple modern styles for Andhra Bhavans app */
+:root{ --bg:#fff; --muted:#6b7280; --accent:#ef6c00; --accent-2:#ff9800; --card:#fff; --shadow:0 6px 18px rgba(15,23,42,0.08); font-family: Inter, system-ui, Arial, sans-serif; }
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#fff 0%, #fffaf0 100%);color:#0f172a}
+.container{max-width:1000px;margin:0 auto;padding:24px}
+.site-header{background:var(--card);border-bottom:1px solid #eee}
+.site-header .container{display:flex;align-items:center;gap:16px}
+.brand{margin:0;font-size:1.25rem;color:var(--accent)}
+.nav{margin-left:auto;display:flex;gap:12px}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:6px}
+.nav a:hover{background:#fff4e6;color:var(--accent)}
+.home-hero{padding:80px 24px;text-align:center}
+.home-hero h2{font-size:2rem;margin:0 0 8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;border:none;text-decoration:none;cursor:pointer}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-body{padding:12px}
+.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.site-footer{padding:20px 0;text-align:center;color:var(--muted);border-top:1px solid #eee;margin-top:40px}
+.checkout{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.checkout form{background:#fff;padding:16px;border-radius:8px;box-shadow:var(--shadow)}
+.cart-row{padding:8px 0;border-bottom:1px dashed #eee}
+.admin-page{display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.order-card{padding:12px;border-radius:8px;background:#fff;box-shadow:var(--shadow);margin-bottom:12px}
+label{display:block;margin:8px 0}
+input,textarea,select{width:100%;padding:8px;border:1px solid #e6e6e6;border-radius:6px}
+
         /* General Styles */
         body {
             font-family: Arial, sans-serif;

@@ -1,3 +1,53 @@
+// Minimal client site JS: load menu, manage simple cart, checkout and feedback
+const qs = (s, el=document)=>el.querySelector(s);
+const qsa = (s, el=document)=>Array.from(el.querySelectorAll(s));
+const API = '/api';
+let CART = { items: {}, count: 0 };
+function loadMenu(){
+  fetch(API + '/menu').then(r=>r.json()).then(data=>{
+    const items = data.items || [];
+    const out = items.map(it=>`<article class="card">
+      <img src="${it.img}" alt="${it.title}">
+      <div class="card-body">
+        <h3>${it.title}</h3>
+        <p>${it.desc}</p>
+        <div class="card-foot">
+          <strong>₹${it.price.toFixed(2)}</strong>
+          <button class="btn add" data-id="${it.id}" data-title="${it.title}" data-price="${it.price}">Add</button>
+        </div>
+      </div>
+    </article>`).join('');
+    const target = qs('#menu-list');
+    if(target) target.innerHTML = out;
+  }).catch(()=>{ if(qs('#menu-list')) qs('#menu-list').innerHTML = '<p>Failed to load menu</p>'; });
+}
+function addToCart(item){
+  const id = item.id;
+  CART.items[id] = CART.items[id] || { id, title: item.title, price: Number(item.price), qty: 0 };
+  CART.items[id].qty += 1; CART.count = (CART.count||0)+1; saveCart();
+}
+function saveCart(){ localStorage.setItem('cart', JSON.stringify(CART)); }
+function loadCartFromStorage(){ const raw = localStorage.getItem('cart'); if(raw) CART = JSON.parse(raw); }
+function renderCartContents(){ const el = qs('#cart-contents'); if(!el) return; const rows = Object.values(CART.items).map(i=>`<div class="cart-row"><b>${i.title}</b> x ${i.qty} — ₹${(i.price*i.qty).toFixed(2)}</div>`).join(''); el.innerHTML = rows + `<p>Total items: ${CART.count||0}</p>`; }
+function initSite(){ loadCartFromStorage(); renderCartContents(); loadMenu();
+  document.body.addEventListener('click', e=>{
+    if(e.target.matches('.btn.add')){
+      const btn = e.target; addToCart({ id: btn.dataset.id, title: btn.dataset.title, price: btn.dataset.price }); renderCartContents(); alert('Added to cart');
+    }
+  });
+  const checkoutForm = qs('#checkout-form'); if(checkoutForm){ checkoutForm.addEventListener('submit', e=>{
+    e.preventDefault(); const fm = new FormData(checkoutForm); const customer = { name: fm.get('name'), phone: fm.get('phone'), address: fm.get('address') };
+    const payload = { cart: CART, customer, meta: { placedAt: new Date().toISOString() } };
+    fetch(API + '/orders', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(r=>r.json()).then(j=>{ qs('#checkout-result').textContent = 'Order placed: ' + (j.id||''); CART = { items: {}, count: 0 }; saveCart(); renderCartContents(); })
+      .catch(()=>{ qs('#checkout-result').textContent = 'Order failed'; });
+  }); }
+  const feedbackForm = qs('#feedback-form'); if(feedbackForm){ feedbackForm.addEventListener('submit', e=>{
+    e.preventDefault(); const fm = new FormData(feedbackForm); const data = { name: fm.get('name'), rating: fm.get('rating'), comments: fm.get('comments'), created: new Date().toISOString() };
+    fetch(API + '/feedback', { method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(data) }).then(r=>r.json()).then(()=>{ qs('#feedback-result').textContent = 'Thanks for the feedback'; feedbackForm.reset(); }).catch(()=>qs('#feedback-result').textContent='Failed');
+  }); }
+}
+document.addEventListener('DOMContentLoaded', initSite);
 // Simple site JS: mobile nav toggle and menu filtering
 (function(){
   'use strict';
