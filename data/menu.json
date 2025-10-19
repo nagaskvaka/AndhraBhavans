@@ -28,7 +28,7 @@
       "id": "item-4",
       "title": "Masala Dosa",
       "desc": "Crispy rice dosa stuffed with spiced potato filling.",
-      "img": "images/PR1.jpg",
+      "img": "images/MMR1.jpg",
       "cat": ["tiffin"],
       "price": 4.00
     },
@@ -39,6 +39,47 @@
       "img": "images/MLR1.jpg",
       "cat": ["drinks"],
       "price": 2.25
+    }
+    ,
+    {
+      "id": "item-6",
+      "title": "Andhra Kodi Curry",
+      "desc": "Spicy country-style chicken curry cooked with roasted spices and curry leaves.",
+      "img": "images/MMR1.jpg",
+      "cat": ["curry","chicken"],
+      "price": 6.75
+    },
+    {
+      "id": "item-7",
+      "title": "Gutti Vankaya (Stuffed Brinjal)",
+      "desc": "Small brinjals stuffed with a tangy, roasted spice mix and simmered to perfection.",
+      "img": "images/mb1.jpg",
+      "cat": ["vegetarian","starters"],
+      "price": 5.00
+    },
+    {
+      "id": "item-8",
+      "title": "Avakai (Mango Pickle) Thali",
+      "desc": "A small thali featuring Andhra-style mango pickle, rice, and sides — bold & tangy.",
+      "img": "images/mb2.jpg",
+      "cat": ["thali","rice"],
+      "price": 4.50
+    },
+    {
+      "id": "item-9",
+      "title": "Ulava Charu (Horse Gram Soup)",
+      "desc": "Hearty, protein-rich soup flavored with spices and tamarind — traditional comfort food.",
+      "img": "images/mb3.jpg",
+      "cat": ["soup","starters"],
+      "price": 3.75
+    },
+    {
+      "id": "item-10",
+      "title": "Bobbattu (Sweet Puran Poli)",
+      "desc": "Sweet flatbread filled with jaggery and lentil stuffing — a festive dessert.",
+      "img": "images/mb4.jpg",
+      "cat": ["dessert"],
+      "price": 2.85
     }
   ]
 }
